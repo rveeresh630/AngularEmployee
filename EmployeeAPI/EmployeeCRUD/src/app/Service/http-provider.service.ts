@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WebApiService } from './web-api.service';
 
-var apiUrl = "http://localhost:5066/";
+var apiUrl = "http://localhost:5066";
 
 var httpLink = {
   getAllEmployee: apiUrl + "/api/employee",
@@ -20,7 +20,8 @@ export class HttpProviderService {
     return this.webApiService.get(httpLink.getAllEmployee);
   }
   public deleteEmployeeById(model: any): Observable<any> {
-    return this.webApiService.post(httpLink.deleteEmployeeById + '?Id=' + model, "");
+   // return this.webApiService.delete(httpLink.deleteEmployeeById + model);
+    return this.webApiService.post(httpLink.saveEmployee, model);
   }
   public getEmployeeDetailById(model: any): Observable<any> {
     return this.webApiService.get(httpLink.getEmployeeDetailById + '?Id=' + model);

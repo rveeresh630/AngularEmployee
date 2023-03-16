@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
     private toastr: ToastrService, private httpProvider : HttpProviderService) { }
 
   ngOnInit(): void {
-    //this.getAllEmployee();
+    this.getAllEmployee();
   }
   async getAllEmployee() {
     this.httpProvider.getAllEmployee().subscribe((data : any) => {

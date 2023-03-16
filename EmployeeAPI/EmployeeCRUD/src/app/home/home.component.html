@@ -19,9 +19,6 @@
               <th>First Name</th>
               <th>Last Name</th>
               <th>Email</th>
-              <th>Address</th>
-              <th>Phone</th>
-              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -29,11 +26,10 @@
               <td>{{ employee.firstName }}</td>
               <td>{{ employee.lastName }}</td>
               <td>{{ employee.email }}</td>
-              <td>{{ employee.address }}</td>
-              <td>{{ employee.phone }}</td>
               <td>
-                <!-- <a href="#" [routerLink]="['/ViewEmployee/', employee.id]" class="btn"><i class='fas fa-eye view'></i></a>
-                <a href="#" [routerLink]="['/EditEmployee/', employee.id]" class="btn"><i class="fa fa-edit edit"></i></a> -->
+                <a href="#" [routerLink]="['/ViewEmployee/', employee.employeeId]" class="btn"><i class='fas fa-eye view'></i></a>
+                <a href="#" [routerLink]="['/EditEmployee/', employee.employeeId]" class="btn"><i class="fa fa-edit edit"></i></a> 
+
                 <button type="button" (click)="deleteEmployeeConfirmation(employee)" class="btn"><i class='fas fa-trash-alt delete'></i></button>
               </td>
             </tr>

@@ -51,10 +51,25 @@ export class WebApiService {
       );
   }
 
+  delete(url: string, model: any): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }), 
+    };
+    return this.httpClient.delete(
+      url,
+      httpOptions)
+      .pipe(
+        map((response: any) => this.ReturnResponseData(response)),
+        catchError(this.handleError)
+      );
+  }
+
   private ReturnResponseData(response: any) {
     return response;
   }
-  
+
   private handleError(error: any) {
     return throwError(error);
   }
